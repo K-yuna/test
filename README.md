@@ -1,3 +1,3 @@
-# ¼]‚ê Rubyu‹`
+# æ¾æ±Ÿé«˜å°‚Rubyè¬›ç¾©
 This is test.
 "# test" 
