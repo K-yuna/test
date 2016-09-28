@@ -1,0 +1,1699 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <character x="0" y="0" name="star_sky1" costumes="costume1:star_sky.png" angle="0"></character>
+  <character x="0" y="24" name="castle1" costumes="costume1:castle.png" angle="0"></character>
+  <character x="320" y="398" name="unicon1" costumes="costume1:unicon.png" angle="0"></character>
+  <character x="554" y="190" name="fire1" costumes="costume1:sample.png" angle="0"></character>
+  <character x="0" y="208" name="fire2" costumes="costume1:図1.png" angle="0"></character>
+  <character x="0" y="0" name="fire3" costumes="costume1:sample.png" angle="0"></character>
+  <character x="0" y="0" name="fire4" costumes="costume1:図1.png" angle="0"></character>
+  <character x="0" y="0" name="fire5" costumes="costume1:sample.png" angle="0"></character>
+  <character x="0" y="0" name="fire6" costumes="costume1:図1.png" angle="0"></character>
+  <character x="572" y="22" name="heart1" costumes="costume1:heart.png" angle="0"></character>
+  <block type="character_new" id="4022" collapsed="true" x="184" y="-904">
+    <field name="NAME">star_sky1</field>
+    <statement name="DO">
+      <block type="events_on_start" id="4023"></block>
+    </statement>
+    <next>
+      <block type="variables_set" id="4024" inline="true">
+        <field name="VAR">time</field>
+        <value name="VALUE">
+          <block type="operators_rand" id="4025" inline="true">
+            <value name="A">
+              <block type="math_number" id="4026">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="4027">
+                <field name="NUM">30</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="4028" inline="true">
+            <field name="VAR">heart</field>
+            <value name="VALUE">
+              <block type="math_number" id="4029">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <next>
+              <block type="character_new" id="4030">
+                <field name="NAME">heart1</field>
+                <statement name="DO">
+                  <block type="events_on_start" id="4031">
+                    <statement name="DO">
+                      <block type="control_loop" id="4032">
+                        <statement name="DO">
+                          <block type="looks_say" id="4033" inline="true">
+                            <value name="TEXT">
+                              <block type="variables_get" id="4034">
+                                <field name="VAR">heart</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+                <next>
+                  <block type="character_new" id="4035">
+                    <field name="NAME">unicon1</field>
+                    <statement name="DO">
+                      <block type="looks_say" id="4036" inline="true">
+                        <value name="TEXT">
+                          <block type="text" id="4037">
+                            <field name="TEXT">Go to castle for my princess. Push the SPACE KEY.</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="motion_set_x_y" id="4038" inline="true">
+                            <value name="X">
+                              <block type="math_number" id="4039">
+                                <field name="NUM">350</field>
+                              </block>
+                            </value>
+                            <value name="Y">
+                              <block type="math_number" id="4040">
+                                <field name="NUM">400</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="events_on_key_push_or_down" id="4041">
+                                <field name="KEY">K_SPACE</field>
+                                <field name="POD">push</field>
+                                <statement name="DO">
+                                  <block type="looks_say" id="4042" inline="true">
+                                    <value name="TEXT">
+                                      <block type="text" id="4043">
+                                        <field name="TEXT"></field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="control_loop" id="4044">
+                                        <statement name="DO">
+                                          <block type="control_if" id="4045" inline="true">
+                                            <value name="COND">
+                                              <block type="sensing_input_key_push_or_down" id="4046">
+                                                <field name="KEY">K_UP</field>
+                                                <field name="POD">down</field>
+                                              </block>
+                                            </value>
+                                            <statement name="THEN">
+                                              <block type="motion_change_y_by" id="4047" inline="true">
+                                                <value name="Y">
+                                                  <block type="math_number" id="4048">
+                                                    <field name="NUM">-10</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="control_if" id="4049" inline="true">
+                                                <value name="COND">
+                                                  <block type="sensing_input_key_push_or_down" id="4050">
+                                                    <field name="KEY">K_DOWN</field>
+                                                    <field name="POD">down</field>
+                                                  </block>
+                                                </value>
+                                                <statement name="THEN">
+                                                  <block type="motion_change_y_by" id="4051" inline="true">
+                                                    <value name="Y">
+                                                      <block type="math_number" id="4052">
+                                                        <field name="NUM">10</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </statement>
+                                                <next>
+                                                  <block type="control_if" id="4053" inline="true">
+                                                    <value name="COND">
+                                                      <block type="sensing_input_key_push_or_down" id="4054">
+                                                        <field name="KEY">K_LEFT</field>
+                                                        <field name="POD">down</field>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="THEN">
+                                                      <block type="motion_change_x_by" id="4055" inline="true">
+                                                        <value name="X">
+                                                          <block type="math_number" id="4056">
+                                                            <field name="NUM">-10</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </statement>
+                                                    <next>
+                                                      <block type="control_if" id="4057" inline="true">
+                                                        <value name="COND">
+                                                          <block type="sensing_input_key_push_or_down" id="4058">
+                                                            <field name="KEY">K_RIGHT</field>
+                                                            <field name="POD">down</field>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="THEN">
+                                                          <block type="motion_change_x_by" id="4059" inline="true">
+                                                            <value name="X">
+                                                              <block type="math_number" id="4060">
+                                                                <field name="NUM">10</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </statement>
+                                                        <next>
+                                                          <block type="control_if" id="4600" inline="true">
+                                                            <value name="COND">
+                                                              <block type="operators_compare_lte" id="4601" inline="true">
+                                                                <value name="A">
+                                                                  <block type="variables_get" id="4602">
+                                                                    <field name="VAR">heart</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                  <block type="math_number" id="4603">
+                                                                    <field name="NUM">0</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <statement name="THEN">
+                                                              <block type="control_break" id="4664"></block>
+                                                            </statement>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="motion_move" id="4649" inline="true">
+                                            <value name="STEP">
+                                              <block type="math_number" id="4650">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="character_new" id="4061">
+                        <field name="NAME">fire1</field>
+                        <statement name="DO">
+                          <block type="events_on_start" id="4062">
+                            <statement name="DO">
+                              <block type="looks_hide" id="4063">
+                                <next>
+                                  <block type="motion_set_x_y" id="4064" inline="true">
+                                    <value name="X">
+                                      <block type="math_number" id="4065">
+                                        <field name="NUM">680</field>
+                                      </block>
+                                    </value>
+                                    <value name="Y">
+                                      <block type="operators_rand" id="4066" inline="true">
+                                        <value name="A">
+                                          <block type="math_number" id="4067">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="4068">
+                                            <field name="NUM">480</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="events_on_key_push_or_down" id="4069">
+                                <field name="KEY">K_SPACE</field>
+                                <field name="POD">push</field>
+                                <statement name="DO">
+                                  <block type="looks_show" id="4070">
+                                    <next>
+                                      <block type="control_loop" id="4071">
+                                        <statement name="DO">
+                                          <block type="motion_change_x_by" id="4072" inline="true">
+                                            <value name="X">
+                                              <block type="math_number" id="4073">
+                                                <field name="NUM">-15</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="control_if" id="4074" inline="true">
+                                                <value name="COND">
+                                                  <block type="operators_compare_gte" id="4075" inline="true">
+                                                    <value name="A">
+                                                      <block type="math_number" id="4076">
+                                                        <field name="NUM">0</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="sensing_character_property" id="4077">
+                                                        <field name="CHAR">fire1</field>
+                                                        <field name="PROPERTY">x</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <statement name="THEN">
+                                                  <block type="looks_hide" id="4078">
+                                                    <next>
+                                                      <block type="motion_set_x_y" id="4079" inline="true">
+                                                        <value name="X">
+                                                          <block type="math_number" id="4080">
+                                                            <field name="NUM">680</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="Y">
+                                                          <block type="operators_rand" id="4081" inline="true">
+                                                            <value name="A">
+                                                              <block type="math_number" id="4082">
+                                                                <field name="NUM">0</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <block type="math_number" id="4083">
+                                                                <field name="NUM">480</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="looks_show" id="4084"></block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                                <next>
+                                                  <block type="control_if" id="4085" inline="true">
+                                                    <value name="COND">
+                                                      <block type="sensing_hit" id="4086">
+                                                        <field name="CHAR">unicon1</field>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="THEN">
+                                                      <block type="looks_hide" id="4087">
+                                                        <next>
+                                                          <block type="variables_set" id="4088" inline="true">
+                                                            <field name="VAR">heart</field>
+                                                            <value name="VALUE">
+                                                              <block type="operators_minus" id="4305" inline="true">
+                                                                <value name="A">
+                                                                  <block type="variables_get" id="4306">
+                                                                    <field name="VAR">heart</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                  <block type="math_number" id="4307">
+                                                                    <field name="NUM">1</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="control_if" id="4425" inline="true">
+                                                                <value name="COND">
+                                                                  <block type="operators_compare_lte" id="4426" inline="true">
+                                                                    <value name="A">
+                                                                      <block type="variables_get" id="4427">
+                                                                        <field name="VAR">heart</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <block type="math_number" id="4428">
+                                                                        <field name="NUM">0</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <statement name="THEN">
+                                                                  <block type="character_new" id="4429">
+                                                                    <field name="NAME">castle1</field>
+                                                                    <statement name="DO">
+                                                                      <block type="looks_say" id="4430" inline="true">
+                                                                        <value name="TEXT">
+                                                                          <block type="text" id="4431">
+                                                                            <field name="TEXT">game over!!</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </statement>
+                                                                    <next>
+                                                                      <block type="character_new" id="4480">
+                                                                        <field name="NAME">fire1</field>
+                                                                        <statement name="DO">
+                                                                          <block type="looks_vanish" id="4499"></block>
+                                                                        </statement>
+                                                                        <next>
+                                                                          <block type="character_new" id="4482">
+                                                                            <field name="NAME">fire2</field>
+                                                                            <statement name="DO">
+                                                                              <block type="looks_vanish" id="4500"></block>
+                                                                            </statement>
+                                                                            <next>
+                                                                              <block type="character_new" id="4484">
+                                                                                <field name="NAME">fire3</field>
+                                                                                <statement name="DO">
+                                                                                  <block type="looks_vanish" id="4501"></block>
+                                                                                </statement>
+                                                                                <next>
+                                                                                  <block type="character_new" id="4486">
+                                                                                    <field name="NAME">fire4</field>
+                                                                                    <statement name="DO">
+                                                                                      <block type="looks_vanish" id="4502"></block>
+                                                                                    </statement>
+                                                                                    <next>
+                                                                                      <block type="character_new" id="4488">
+                                                                                        <field name="NAME">fire5</field>
+                                                                                        <statement name="DO">
+                                                                                          <block type="looks_vanish" id="4503"></block>
+                                                                                        </statement>
+                                                                                        <next>
+                                                                                          <block type="character_new" id="4490">
+                                                                                            <field name="NAME">fire6</field>
+                                                                                            <statement name="DO">
+                                                                                              <block type="looks_vanish" id="4504"></block>
+                                                                                            </statement>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </statement>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="character_new" id="4089">
+                            <field name="NAME">fire2</field>
+                            <statement name="DO">
+                              <block type="events_on_start" id="4090">
+                                <statement name="DO">
+                                  <block type="looks_hide" id="4091">
+                                    <next>
+                                      <block type="motion_set_x_y" id="4092" inline="true">
+                                        <value name="X">
+                                          <block type="math_number" id="4093">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="Y">
+                                          <block type="operators_rand" id="4094" inline="true">
+                                            <value name="A">
+                                              <block type="math_number" id="4095">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="4096">
+                                                <field name="NUM">480</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="events_on_key_push_or_down" id="4097">
+                                    <field name="KEY">K_SPACE</field>
+                                    <field name="POD">push</field>
+                                    <statement name="DO">
+                                      <block type="looks_show" id="4098">
+                                        <next>
+                                          <block type="control_loop" id="4099">
+                                            <statement name="DO">
+                                              <block type="motion_change_x_by" id="4100" inline="true">
+                                                <value name="X">
+                                                  <block type="math_number" id="4101">
+                                                    <field name="NUM">15</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="control_if" id="4102" inline="true">
+                                                    <value name="COND">
+                                                      <block type="operators_compare_gte" id="4103" inline="true">
+                                                        <value name="A">
+                                                          <block type="sensing_character_property" id="4104">
+                                                            <field name="CHAR">fire2</field>
+                                                            <field name="PROPERTY">x</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="math_number" id="4105">
+                                                            <field name="NUM">550</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="THEN">
+                                                      <block type="looks_hide" id="4106">
+                                                        <next>
+                                                          <block type="motion_set_x_y" id="4107" inline="true">
+                                                            <value name="X">
+                                                              <block type="math_number" id="4108">
+                                                                <field name="NUM">0</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="Y">
+                                                              <block type="operators_rand" id="4109" inline="true">
+                                                                <value name="A">
+                                                                  <block type="math_number" id="4110">
+                                                                    <field name="NUM">0</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                  <block type="math_number" id="4111">
+                                                                    <field name="NUM">480</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="looks_show" id="4112"></block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                    <next>
+                                                      <block type="control_if" id="4113" inline="true">
+                                                        <value name="COND">
+                                                          <block type="sensing_hit" id="4114">
+                                                            <field name="CHAR">unicon1</field>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="THEN">
+                                                          <block type="looks_hide" id="4115">
+                                                            <next>
+                                                              <block type="variables_set" id="4308" inline="true">
+                                                                <field name="VAR">heart</field>
+                                                                <value name="VALUE">
+                                                                  <block type="operators_minus" id="4309" inline="true">
+                                                                    <value name="A">
+                                                                      <block type="variables_get" id="4310">
+                                                                        <field name="VAR">heart</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <block type="math_number" id="4311">
+                                                                        <field name="NUM">1</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="control_if" id="4418" inline="true">
+                                                                    <value name="COND">
+                                                                      <block type="operators_compare_lte" id="4419" inline="true">
+                                                                        <value name="A">
+                                                                          <block type="variables_get" id="4420">
+                                                                            <field name="VAR">heart</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <block type="math_number" id="4421">
+                                                                            <field name="NUM">0</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <statement name="THEN">
+                                                                      <block type="character_new" id="4422">
+                                                                        <field name="NAME">castle1</field>
+                                                                        <statement name="DO">
+                                                                          <block type="looks_say" id="4423" inline="true">
+                                                                            <value name="TEXT">
+                                                                              <block type="text" id="4424">
+                                                                                <field name="TEXT">game over!!</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </statement>
+                                                                        <next>
+                                                                          <block type="character_new" id="4468">
+                                                                            <field name="NAME">fire1</field>
+                                                                            <statement name="DO">
+                                                                              <block type="looks_vanish" id="4512"></block>
+                                                                            </statement>
+                                                                            <next>
+                                                                              <block type="character_new" id="4470">
+                                                                                <field name="NAME">fire2</field>
+                                                                                <statement name="DO">
+                                                                                  <block type="looks_vanish" id="4513"></block>
+                                                                                </statement>
+                                                                                <next>
+                                                                                  <block type="character_new" id="4472">
+                                                                                    <field name="NAME">fire3</field>
+                                                                                    <statement name="DO">
+                                                                                      <block type="looks_vanish" id="4514"></block>
+                                                                                    </statement>
+                                                                                    <next>
+                                                                                      <block type="character_new" id="4474">
+                                                                                        <field name="NAME">fire4</field>
+                                                                                        <statement name="DO">
+                                                                                          <block type="looks_vanish" id="4515"></block>
+                                                                                        </statement>
+                                                                                        <next>
+                                                                                          <block type="character_new" id="4476">
+                                                                                            <field name="NAME">fire5</field>
+                                                                                            <statement name="DO">
+                                                                                              <block type="looks_vanish" id="4516"></block>
+                                                                                            </statement>
+                                                                                            <next>
+                                                                                              <block type="character_new" id="4478">
+                                                                                                <field name="NAME">fire6</field>
+                                                                                                <statement name="DO">
+                                                                                                  <block type="looks_vanish" id="4517"></block>
+                                                                                                </statement>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </statement>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </statement>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="character_new" id="4121">
+                                <field name="NAME">fire3</field>
+                                <statement name="DO">
+                                  <block type="events_on_start" id="4122">
+                                    <statement name="DO">
+                                      <block type="looks_hide" id="4123">
+                                        <next>
+                                          <block type="motion_set_x_y" id="4124" inline="true">
+                                            <value name="X">
+                                              <block type="math_number" id="4125">
+                                                <field name="NUM">680</field>
+                                              </block>
+                                            </value>
+                                            <value name="Y">
+                                              <block type="operators_rand" id="4126" inline="true">
+                                                <value name="A">
+                                                  <block type="math_number" id="4127">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="math_number" id="4128">
+                                                    <field name="NUM">480</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="events_on_key_push_or_down" id="4129">
+                                        <field name="KEY">K_SPACE</field>
+                                        <field name="POD">push</field>
+                                        <statement name="DO">
+                                          <block type="control_sleep" id="4130" inline="true">
+                                            <value name="SEC">
+                                              <block type="variables_get" id="4131">
+                                                <field name="VAR">time</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="looks_show" id="4132">
+                                                <next>
+                                                  <block type="control_loop" id="4133">
+                                                    <statement name="DO">
+                                                      <block type="motion_change_x_by" id="4134" inline="true">
+                                                        <value name="X">
+                                                          <block type="math_number" id="4135">
+                                                            <field name="NUM">-15</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="control_if" id="4136" inline="true">
+                                                            <value name="COND">
+                                                              <block type="operators_compare_gte" id="4137" inline="true">
+                                                                <value name="A">
+                                                                  <block type="math_number" id="4138">
+                                                                    <field name="NUM">0</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                  <block type="sensing_character_property" id="4139">
+                                                                    <field name="CHAR">fire3</field>
+                                                                    <field name="PROPERTY">x</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <statement name="THEN">
+                                                              <block type="looks_hide" id="4140">
+                                                                <next>
+                                                                  <block type="control_sleep" id="4141" inline="true">
+                                                                    <value name="SEC">
+                                                                      <block type="variables_get" id="4142">
+                                                                        <field name="VAR">time</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="motion_set_x_y" id="4143" inline="true">
+                                                                        <value name="X">
+                                                                          <block type="math_number" id="4144">
+                                                                            <field name="NUM">680</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="Y">
+                                                                          <block type="operators_rand" id="4145" inline="true">
+                                                                            <value name="A">
+                                                                              <block type="math_number" id="4146">
+                                                                                <field name="NUM">0</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="math_number" id="4147">
+                                                                                <field name="NUM">480</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="looks_show" id="4148"></block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </statement>
+                                                            <next>
+                                                              <block type="control_if" id="4149" inline="true">
+                                                                <value name="COND">
+                                                                  <block type="sensing_hit" id="4150">
+                                                                    <field name="CHAR">unicon1</field>
+                                                                  </block>
+                                                                </value>
+                                                                <statement name="THEN">
+                                                                  <block type="looks_hide" id="4151">
+                                                                    <next>
+                                                                      <block type="variables_set" id="4312" inline="true">
+                                                                        <field name="VAR">heart</field>
+                                                                        <value name="VALUE">
+                                                                          <block type="operators_minus" id="4313" inline="true">
+                                                                            <value name="A">
+                                                                              <block type="variables_get" id="4314">
+                                                                                <field name="VAR">heart</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="math_number" id="4315">
+                                                                                <field name="NUM">1</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="control_if" id="4411" inline="true">
+                                                                            <value name="COND">
+                                                                              <block type="operators_compare_lte" id="4412" inline="true">
+                                                                                <value name="A">
+                                                                                  <block type="variables_get" id="4413">
+                                                                                    <field name="VAR">heart</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="math_number" id="4414">
+                                                                                    <field name="NUM">0</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <statement name="THEN">
+                                                                              <block type="character_new" id="4415">
+                                                                                <field name="NAME">castle1</field>
+                                                                                <statement name="DO">
+                                                                                  <block type="looks_say" id="4416" inline="true">
+                                                                                    <value name="TEXT">
+                                                                                      <block type="text" id="4417">
+                                                                                        <field name="TEXT">game over!!</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </statement>
+                                                                                <next>
+                                                                                  <block type="character_new" id="4456">
+                                                                                    <field name="NAME">fire1</field>
+                                                                                    <statement name="DO">
+                                                                                      <block type="looks_vanish" id="4525"></block>
+                                                                                    </statement>
+                                                                                    <next>
+                                                                                      <block type="character_new" id="4458">
+                                                                                        <field name="NAME">fire2</field>
+                                                                                        <statement name="DO">
+                                                                                          <block type="looks_vanish" id="4526"></block>
+                                                                                        </statement>
+                                                                                        <next>
+                                                                                          <block type="character_new" id="4460">
+                                                                                            <field name="NAME">fire3</field>
+                                                                                            <statement name="DO">
+                                                                                              <block type="looks_vanish" id="4527"></block>
+                                                                                            </statement>
+                                                                                            <next>
+                                                                                              <block type="character_new" id="4462">
+                                                                                                <field name="NAME">fire4</field>
+                                                                                                <statement name="DO">
+                                                                                                  <block type="looks_vanish" id="4528"></block>
+                                                                                                </statement>
+                                                                                                <next>
+                                                                                                  <block type="character_new" id="4464">
+                                                                                                    <field name="NAME">fire5</field>
+                                                                                                    <statement name="DO">
+                                                                                                      <block type="looks_vanish" id="4529"></block>
+                                                                                                    </statement>
+                                                                                                    <next>
+                                                                                                      <block type="character_new" id="4466">
+                                                                                                        <field name="NAME">fire6</field>
+                                                                                                        <statement name="DO">
+                                                                                                          <block type="looks_vanish" id="4530"></block>
+                                                                                                        </statement>
+                                                                                                      </block>
+                                                                                                    </next>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </statement>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </statement>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="character_new" id="4157">
+                                    <field name="NAME">fire4</field>
+                                    <statement name="DO">
+                                      <block type="events_on_start" id="4158">
+                                        <statement name="DO">
+                                          <block type="looks_hide" id="4159">
+                                            <next>
+                                              <block type="motion_set_x_y" id="4160" inline="true">
+                                                <value name="X">
+                                                  <block type="math_number" id="4161">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="Y">
+                                                  <block type="operators_rand" id="4162" inline="true">
+                                                    <value name="A">
+                                                      <block type="math_number" id="4163">
+                                                        <field name="NUM">0</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_number" id="4164">
+                                                        <field name="NUM">480</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="events_on_key_push_or_down" id="4165">
+                                            <field name="KEY">K_SPACE</field>
+                                            <field name="POD">push</field>
+                                            <statement name="DO">
+                                              <block type="control_sleep" id="4166" inline="true">
+                                                <value name="SEC">
+                                                  <block type="variables_get" id="4167">
+                                                    <field name="VAR">time</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="looks_show" id="4168">
+                                                    <next>
+                                                      <block type="control_loop" id="4169">
+                                                        <statement name="DO">
+                                                          <block type="motion_change_x_by" id="4170" inline="true">
+                                                            <value name="X">
+                                                              <block type="math_number" id="4171">
+                                                                <field name="NUM">15</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="control_if" id="4172" inline="true">
+                                                                <value name="COND">
+                                                                  <block type="operators_compare_gte" id="4173" inline="true">
+                                                                    <value name="A">
+                                                                      <block type="sensing_character_property" id="4174">
+                                                                        <field name="CHAR">fire4</field>
+                                                                        <field name="PROPERTY">x</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <block type="math_number" id="4175">
+                                                                        <field name="NUM">550</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <statement name="THEN">
+                                                                  <block type="looks_hide" id="4176">
+                                                                    <next>
+                                                                      <block type="control_sleep" id="4177" inline="true">
+                                                                        <value name="SEC">
+                                                                          <block type="variables_get" id="4178">
+                                                                            <field name="VAR">time</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="motion_set_x_y" id="4179" inline="true">
+                                                                            <value name="X">
+                                                                              <block type="math_number" id="4180">
+                                                                                <field name="NUM">0</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="Y">
+                                                                              <block type="operators_rand" id="4181" inline="true">
+                                                                                <value name="A">
+                                                                                  <block type="math_number" id="4182">
+                                                                                    <field name="NUM">0</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="math_number" id="4183">
+                                                                                    <field name="NUM">480</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="looks_show" id="4184"></block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </statement>
+                                                                <next>
+                                                                  <block type="control_if" id="4185" inline="true">
+                                                                    <value name="COND">
+                                                                      <block type="sensing_hit" id="4186">
+                                                                        <field name="CHAR">unicon1</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <statement name="THEN">
+                                                                      <block type="looks_hide" id="4187">
+                                                                        <next>
+                                                                          <block type="variables_set" id="4316" inline="true">
+                                                                            <field name="VAR">heart</field>
+                                                                            <value name="VALUE">
+                                                                              <block type="operators_minus" id="4317" inline="true">
+                                                                                <value name="A">
+                                                                                  <block type="variables_get" id="4318">
+                                                                                    <field name="VAR">heart</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="math_number" id="4319">
+                                                                                    <field name="NUM">1</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="control_if" id="4404" inline="true">
+                                                                                <value name="COND">
+                                                                                  <block type="operators_compare_lte" id="4405" inline="true">
+                                                                                    <value name="A">
+                                                                                      <block type="variables_get" id="4406">
+                                                                                        <field name="VAR">heart</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="math_number" id="4407">
+                                                                                        <field name="NUM">0</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <statement name="THEN">
+                                                                                  <block type="character_new" id="4408">
+                                                                                    <field name="NAME">castle1</field>
+                                                                                    <statement name="DO">
+                                                                                      <block type="looks_say" id="4409" inline="true">
+                                                                                        <value name="TEXT">
+                                                                                          <block type="text" id="4410">
+                                                                                            <field name="TEXT">game over!!</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </statement>
+                                                                                    <next>
+                                                                                      <block type="character_new" id="4444">
+                                                                                        <field name="NAME">fire1</field>
+                                                                                        <statement name="DO">
+                                                                                          <block type="looks_vanish" id="4538"></block>
+                                                                                        </statement>
+                                                                                        <next>
+                                                                                          <block type="character_new" id="4446">
+                                                                                            <field name="NAME">fire2</field>
+                                                                                            <statement name="DO">
+                                                                                              <block type="looks_vanish" id="4539"></block>
+                                                                                            </statement>
+                                                                                            <next>
+                                                                                              <block type="character_new" id="4448">
+                                                                                                <field name="NAME">fire3</field>
+                                                                                                <statement name="DO">
+                                                                                                  <block type="looks_vanish" id="4540"></block>
+                                                                                                </statement>
+                                                                                                <next>
+                                                                                                  <block type="character_new" id="4450">
+                                                                                                    <field name="NAME">fire4</field>
+                                                                                                    <statement name="DO">
+                                                                                                      <block type="looks_vanish" id="4541"></block>
+                                                                                                    </statement>
+                                                                                                    <next>
+                                                                                                      <block type="character_new" id="4452">
+                                                                                                        <field name="NAME">fire5</field>
+                                                                                                        <statement name="DO">
+                                                                                                          <block type="looks_vanish" id="4542"></block>
+                                                                                                        </statement>
+                                                                                                        <next>
+                                                                                                          <block type="character_new" id="4454">
+                                                                                                            <field name="NAME">fire6</field>
+                                                                                                            <statement name="DO">
+                                                                                                              <block type="looks_vanish" id="4543"></block>
+                                                                                                            </statement>
+                                                                                                          </block>
+                                                                                                        </next>
+                                                                                                      </block>
+                                                                                                    </next>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </statement>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </statement>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </statement>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="character_new" id="4193">
+                                        <field name="NAME">fire5</field>
+                                        <statement name="DO">
+                                          <block type="events_on_start" id="4194">
+                                            <statement name="DO">
+                                              <block type="looks_hide" id="4195">
+                                                <next>
+                                                  <block type="motion_set_x_y" id="4196" inline="true">
+                                                    <value name="X">
+                                                      <block type="math_number" id="4197">
+                                                        <field name="NUM">680</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="Y">
+                                                      <block type="operators_rand" id="4198" inline="true">
+                                                        <value name="A">
+                                                          <block type="math_number" id="4199">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="math_number" id="4200">
+                                                            <field name="NUM">480</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="events_on_key_push_or_down" id="4201">
+                                                <field name="KEY">K_SPACE</field>
+                                                <field name="POD">push</field>
+                                                <statement name="DO">
+                                                  <block type="control_sleep" id="4202" inline="true">
+                                                    <value name="SEC">
+                                                      <block type="operators_add" id="4203" inline="true">
+                                                        <value name="A">
+                                                          <block type="variables_get" id="4204">
+                                                            <field name="VAR">time</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="math_number" id="4205">
+                                                            <field name="NUM">2</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="looks_show" id="4206">
+                                                        <next>
+                                                          <block type="control_loop" id="4207">
+                                                            <statement name="DO">
+                                                              <block type="motion_change_x_by" id="4208" inline="true">
+                                                                <value name="X">
+                                                                  <block type="math_number" id="4209">
+                                                                    <field name="NUM">-15</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="control_if" id="4210" inline="true">
+                                                                    <value name="COND">
+                                                                      <block type="operators_compare_gte" id="4211" inline="true">
+                                                                        <value name="A">
+                                                                          <block type="math_number" id="4212">
+                                                                            <field name="NUM">0</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <block type="sensing_character_property" id="4213">
+                                                                            <field name="CHAR">fire5</field>
+                                                                            <field name="PROPERTY">x</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <statement name="THEN">
+                                                                      <block type="looks_hide" id="4214">
+                                                                        <next>
+                                                                          <block type="control_sleep" id="4215" inline="true">
+                                                                            <value name="SEC">
+                                                                              <block type="variables_get" id="4216">
+                                                                                <field name="VAR">time</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="motion_set_x_y" id="4217" inline="true">
+                                                                                <value name="X">
+                                                                                  <block type="math_number" id="4218">
+                                                                                    <field name="NUM">680</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="Y">
+                                                                                  <block type="operators_rand" id="4219" inline="true">
+                                                                                    <value name="A">
+                                                                                      <block type="math_number" id="4220">
+                                                                                        <field name="NUM">0</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="math_number" id="4221">
+                                                                                        <field name="NUM">480</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="looks_show" id="4222"></block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </statement>
+                                                                    <next>
+                                                                      <block type="control_if" id="4223" inline="true">
+                                                                        <value name="COND">
+                                                                          <block type="sensing_hit" id="4224">
+                                                                            <field name="CHAR">unicon1</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <statement name="THEN">
+                                                                          <block type="looks_hide" id="4225">
+                                                                            <next>
+                                                                              <block type="variables_set" id="4320" inline="true">
+                                                                                <field name="VAR">heart</field>
+                                                                                <value name="VALUE">
+                                                                                  <block type="operators_minus" id="4321" inline="true">
+                                                                                    <value name="A">
+                                                                                      <block type="variables_get" id="4322">
+                                                                                        <field name="VAR">heart</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="math_number" id="4323">
+                                                                                        <field name="NUM">1</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="control_if" id="4397" inline="true">
+                                                                                    <value name="COND">
+                                                                                      <block type="operators_compare_lte" id="4398" inline="true">
+                                                                                        <value name="A">
+                                                                                          <block type="variables_get" id="4399">
+                                                                                            <field name="VAR">heart</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="math_number" id="4400">
+                                                                                            <field name="NUM">0</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <statement name="THEN">
+                                                                                      <block type="character_new" id="4401">
+                                                                                        <field name="NAME">castle1</field>
+                                                                                        <statement name="DO">
+                                                                                          <block type="looks_say" id="4402" inline="true">
+                                                                                            <value name="TEXT">
+                                                                                              <block type="text" id="4403">
+                                                                                                <field name="TEXT">game over!!</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </statement>
+                                                                                        <next>
+                                                                                          <block type="character_new" id="4432">
+                                                                                            <field name="NAME">fire1</field>
+                                                                                            <statement name="DO">
+                                                                                              <block type="looks_vanish" id="4551"></block>
+                                                                                            </statement>
+                                                                                            <next>
+                                                                                              <block type="character_new" id="4434">
+                                                                                                <field name="NAME">fire2</field>
+                                                                                                <statement name="DO">
+                                                                                                  <block type="looks_vanish" id="4552"></block>
+                                                                                                </statement>
+                                                                                                <next>
+                                                                                                  <block type="character_new" id="4436">
+                                                                                                    <field name="NAME">fire3</field>
+                                                                                                    <statement name="DO">
+                                                                                                      <block type="looks_vanish" id="4553"></block>
+                                                                                                    </statement>
+                                                                                                    <next>
+                                                                                                      <block type="character_new" id="4438">
+                                                                                                        <field name="NAME">fire4</field>
+                                                                                                        <statement name="DO">
+                                                                                                          <block type="looks_vanish" id="4554"></block>
+                                                                                                        </statement>
+                                                                                                        <next>
+                                                                                                          <block type="character_new" id="4440">
+                                                                                                            <field name="NAME">fire5</field>
+                                                                                                            <statement name="DO">
+                                                                                                              <block type="looks_vanish" id="4555"></block>
+                                                                                                            </statement>
+                                                                                                            <next>
+                                                                                                              <block type="character_new" id="4442">
+                                                                                                                <field name="NAME">fire6</field>
+                                                                                                                <statement name="DO">
+                                                                                                                  <block type="looks_vanish" id="4556"></block>
+                                                                                                                </statement>
+                                                                                                              </block>
+                                                                                                            </next>
+                                                                                                          </block>
+                                                                                                        </next>
+                                                                                                      </block>
+                                                                                                    </next>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </statement>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </statement>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </statement>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="character_new" id="4231">
+                                            <field name="NAME">fire6</field>
+                                            <statement name="DO">
+                                              <block type="events_on_start" id="4232">
+                                                <statement name="DO">
+                                                  <block type="looks_hide" id="4233">
+                                                    <next>
+                                                      <block type="motion_set_x_y" id="4234" inline="true">
+                                                        <value name="X">
+                                                          <block type="math_number" id="4235">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="Y">
+                                                          <block type="operators_rand" id="4236" inline="true">
+                                                            <value name="A">
+                                                              <block type="math_number" id="4237">
+                                                                <field name="NUM">0</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <block type="math_number" id="4238">
+                                                                <field name="NUM">480</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                                <next>
+                                                  <block type="events_on_key_push_or_down" id="4239">
+                                                    <field name="KEY">K_SPACE</field>
+                                                    <field name="POD">push</field>
+                                                    <statement name="DO">
+                                                      <block type="control_sleep" id="4240" inline="true">
+                                                        <value name="SEC">
+                                                          <block type="operators_add" id="4241" inline="true">
+                                                            <value name="A">
+                                                              <block type="variables_get" id="4242">
+                                                                <field name="VAR">time</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <block type="math_number" id="4243">
+                                                                <field name="NUM">2</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="looks_show" id="4244">
+                                                            <next>
+                                                              <block type="control_loop" id="4245">
+                                                                <statement name="DO">
+                                                                  <block type="motion_change_x_by" id="4246" inline="true">
+                                                                    <value name="X">
+                                                                      <block type="math_number" id="4247">
+                                                                        <field name="NUM">15</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="control_if" id="4248" inline="true">
+                                                                        <value name="COND">
+                                                                          <block type="operators_compare_gte" id="4249" inline="true">
+                                                                            <value name="A">
+                                                                              <block type="sensing_character_property" id="4250">
+                                                                                <field name="CHAR">fire6</field>
+                                                                                <field name="PROPERTY">x</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="math_number" id="4251">
+                                                                                <field name="NUM">550</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <statement name="THEN">
+                                                                          <block type="looks_hide" id="4252">
+                                                                            <next>
+                                                                              <block type="control_sleep" id="4253" inline="true">
+                                                                                <value name="SEC">
+                                                                                  <block type="variables_get" id="4254">
+                                                                                    <field name="VAR">time</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="motion_set_x_y" id="4255" inline="true">
+                                                                                    <value name="X">
+                                                                                      <block type="math_number" id="4256">
+                                                                                        <field name="NUM">0</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="Y">
+                                                                                      <block type="operators_rand" id="4257" inline="true">
+                                                                                        <value name="A">
+                                                                                          <block type="math_number" id="4258">
+                                                                                            <field name="NUM">0</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="math_number" id="4259">
+                                                                                            <field name="NUM">480</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="looks_show" id="4260"></block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </statement>
+                                                                        <next>
+                                                                          <block type="control_if" id="4261" inline="true">
+                                                                            <value name="COND">
+                                                                              <block type="sensing_hit" id="4262">
+                                                                                <field name="CHAR">unicon1</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <statement name="THEN">
+                                                                              <block type="looks_hide" id="4263">
+                                                                                <next>
+                                                                                  <block type="variables_set" id="4324" inline="true">
+                                                                                    <field name="VAR">heart</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="operators_minus" id="4325" inline="true">
+                                                                                        <value name="A">
+                                                                                          <block type="variables_get" id="4326">
+                                                                                            <field name="VAR">heart</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="math_number" id="4327">
+                                                                                            <field name="NUM">1</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="control_if" id="4377" inline="true">
+                                                                                        <value name="COND">
+                                                                                          <block type="operators_compare_lte" id="4378" inline="true">
+                                                                                            <value name="A">
+                                                                                              <block type="variables_get" id="4379">
+                                                                                                <field name="VAR">heart</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="B">
+                                                                                              <block type="math_number" id="4380">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <statement name="THEN">
+                                                                                          <block type="character_new" id="4395">
+                                                                                            <field name="NAME">castle1</field>
+                                                                                            <statement name="DO">
+                                                                                              <block type="looks_say" id="4381" inline="true">
+                                                                                                <value name="TEXT">
+                                                                                                  <block type="text" id="4382">
+                                                                                                    <field name="TEXT">game over!!</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </statement>
+                                                                                            <next>
+                                                                                              <block type="character_new" id="4383">
+                                                                                                <field name="NAME">fire1</field>
+                                                                                                <statement name="DO">
+                                                                                                  <block type="looks_vanish" id="4564"></block>
+                                                                                                </statement>
+                                                                                                <next>
+                                                                                                  <block type="character_new" id="4385">
+                                                                                                    <field name="NAME">fire2</field>
+                                                                                                    <statement name="DO">
+                                                                                                      <block type="looks_vanish" id="4565"></block>
+                                                                                                    </statement>
+                                                                                                    <next>
+                                                                                                      <block type="character_new" id="4387">
+                                                                                                        <field name="NAME">fire3</field>
+                                                                                                        <statement name="DO">
+                                                                                                          <block type="looks_vanish" id="4566"></block>
+                                                                                                        </statement>
+                                                                                                        <next>
+                                                                                                          <block type="character_new" id="4389">
+                                                                                                            <field name="NAME">fire4</field>
+                                                                                                            <statement name="DO">
+                                                                                                              <block type="looks_vanish" id="4567"></block>
+                                                                                                            </statement>
+                                                                                                            <next>
+                                                                                                              <block type="character_new" id="4391">
+                                                                                                                <field name="NAME">fire5</field>
+                                                                                                                <statement name="DO">
+                                                                                                                  <block type="looks_vanish" id="4568"></block>
+                                                                                                                </statement>
+                                                                                                                <next>
+                                                                                                                  <block type="character_new" id="4393">
+                                                                                                                    <field name="NAME">fire6</field>
+                                                                                                                    <statement name="DO">
+                                                                                                                      <block type="looks_vanish" id="4569"></block>
+                                                                                                                    </statement>
+                                                                                                                  </block>
+                                                                                                                </next>
+                                                                                                              </block>
+                                                                                                            </next>
+                                                                                                          </block>
+                                                                                                        </next>
+                                                                                                      </block>
+                                                                                                    </next>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </statement>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </statement>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </statement>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="character_new" id="4269">
+                                                <field name="NAME">castle1</field>
+                                                <statement name="DO">
+                                                  <block type="events_on_hit" id="4288">
+                                                    <field name="CHAR">unicon1</field>
+                                                    <statement name="DO">
+                                                      <block type="looks_say" id="4289" inline="true">
+                                                        <value name="TEXT">
+                                                          <block type="text" id="4290">
+                                                            <field name="TEXT">clear!!</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="character_new" id="4291">
+                                                            <field name="NAME">fire1</field>
+                                                            <statement name="DO">
+                                                              <block type="looks_hide" id="4292"></block>
+                                                            </statement>
+                                                            <next>
+                                                              <block type="character_new" id="4293">
+                                                                <field name="NAME">fire2</field>
+                                                                <statement name="DO">
+                                                                  <block type="looks_hide" id="4294"></block>
+                                                                </statement>
+                                                                <next>
+                                                                  <block type="character_new" id="4295">
+                                                                    <field name="NAME">fire3</field>
+                                                                    <statement name="DO">
+                                                                      <block type="looks_hide" id="4296"></block>
+                                                                    </statement>
+                                                                    <next>
+                                                                      <block type="character_new" id="4297">
+                                                                        <field name="NAME">fire4</field>
+                                                                        <statement name="DO">
+                                                                          <block type="looks_hide" id="4298"></block>
+                                                                        </statement>
+                                                                        <next>
+                                                                          <block type="character_new" id="4299">
+                                                                            <field name="NAME">fire5</field>
+                                                                            <statement name="DO">
+                                                                              <block type="looks_hide" id="4300"></block>
+                                                                            </statement>
+                                                                            <next>
+                                                                              <block type="character_new" id="4301">
+                                                                                <field name="NAME">fire6</field>
+                                                                                <statement name="DO">
+                                                                                  <block type="looks_hide" id="4302"></block>
+                                                                                </statement>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
